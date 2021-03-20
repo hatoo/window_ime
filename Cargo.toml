@@ -1,0 +1,14 @@
+[package]
+name = "window_ime"
+version = "0.1.0"
+authors = ["hatoo <hato2000@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+raw-window-handle = "0.3"
+
+[target.'cfg(windows)'.dependencies]
+winapi = { version = "0.3.6", features = ["imm", "winuser", "libloaderapi", "minwindef", "shellscalingapi", "windef", "ntdef", "winerror", "wingdi"] }
+lazy_static = "1"
