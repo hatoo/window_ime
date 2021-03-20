@@ -2,6 +2,10 @@
 #[path = "platform/windows.rs"]
 mod platform;
 
+#[cfg(not(target_os = "windows"))]
+#[path = "platform/unsupported.rs"]
+mod platform;
+
 use platform::IMEImpl;
 use raw_window_handle::HasRawWindowHandle;
 use std::error::Error;
